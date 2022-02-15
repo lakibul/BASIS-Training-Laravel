@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function (){
-    return view('demo');
-});
+Route::get('/bitm',[\App\Http\Controllers\ViewController::class, 'bitm']);
+
