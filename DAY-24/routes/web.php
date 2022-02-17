@@ -19,4 +19,5 @@ Route::get('/', [ViewController::class, 'index'])->name('home');
 Route::get('/bitm', [ViewController::class, 'bitm'])->name('bitm');
 Route::get('/about', [ViewController::class, 'about'])->name('about');
 Route::get('/contact', [ViewController::class, 'contact'])->name('contact');
+Route::get('/details/{id}',[ViewController::class, 'detail'])->name('detail');
 Route::post('/full-name', [UserController::class, 'fullName'])->name('full-name');
