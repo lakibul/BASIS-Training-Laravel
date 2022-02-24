@@ -40,7 +40,7 @@
                                         <a href="" class="btn btn-danger btn-sm" onclick="event.preventDefault(); document.getElementById('deleteStudentForm{{$student->id}}').submit();">
                                             <i class="fa fa-trash"></i>
                                         </a>
-                                        <form action="{{route('delete-student', ['id' => $student->id])}}" id="deleteStudentForm{{$student->id}}">
+                                        <form method="post" action="{{route('delete-student', ['id' => $student->id])}}" id="deleteStudentForm{{$student->id}}">
                                             @csrf
                                         </form>
                                     </td>
