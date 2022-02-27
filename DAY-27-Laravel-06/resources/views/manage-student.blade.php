@@ -37,7 +37,7 @@
                                             <i class="fa fa-edit"></i>
                                         </a>
 
-                                        <a href="" class="btn btn-danger btn-sm" onclick="event.preventDefault(); document.getElementById('deleteStudentForm{{$student->id}}').submit();">
+                                        <a href="" class="btn btn-danger btn-sm" onclick="deleteStudent({{$student->id}})">
                                             <i class="fa fa-trash"></i>
                                         </a>
                                         <form method="post" action="{{route('delete-student', ['id' => $student->id])}}" id="deleteStudentForm{{$student->id}}">
@@ -54,4 +54,16 @@
             </div>
         </div>
     </section>
+
+    <script>
+        function deleteStudent(id)
+        {
+            event.preventDefault();
+            var check = confirm('Are you sure to delete this..');
+            if(check)
+            {
+                document.getElementById('deleteStudentForm'+id).submit();
+            }
+        }
+    </script>
 @endsection
