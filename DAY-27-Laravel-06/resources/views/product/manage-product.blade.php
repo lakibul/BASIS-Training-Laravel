@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header">All Product</div>
+                        <div class="card-header text-center"><h3>All Product</h3></div>
                         <div class="card-body">
                             <h4 class="text-success text-center">{{Session::get('message')}}</h4>
                             <table class="table table-bordered table-hover">
@@ -30,7 +30,6 @@
                                 @foreach($products as $product)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
-                                        <td>{{$product->id}}</td>
                                         <td>{{$product->name}}</td>
                                         <td>{{$product->category}}</td>
                                         <td>{{$product->brand}}</td>
@@ -42,10 +41,10 @@
                                                 <i class="fa fa-edit"></i>
                                             </a>
 
-                                            <a href="" class="btn btn-danger btn-sm">
+                                            <a href="" class="btn btn-danger btn-sm" onclick="deleteProduct({{$product->id}})">
                                                 <i class="fa fa-trash"></i>
                                             </a>
-                                            <form method="post" action="{{route('delete-student', ['id' => $product->id])}}" id="deleteStudentForm{{$product->id}}">
+                                            <form method="post" action="{{route('delete-product', ['id' => $product->id])}}" id="deleteProductForm{{$product->id}}">
                                                 @csrf
                                             </form>
                                         </td>
@@ -60,15 +59,15 @@
         </div>
     </section>
 
-{{--    <script>--}}
-{{--        function deleteStudent(id)--}}
-{{--        {--}}
-{{--            event.preventDefault();--}}
-{{--            var check = confirm('Are you sure to delete this..');--}}
-{{--            if(check)--}}
-{{--            {--}}
-{{--                document.getElementById('deleteStudentForm'+id).submit();--}}
-{{--            }--}}
-{{--        }--}}
-{{--    </script>--}}
+    <script>
+        function deleteProduct(id)
+        {
+            event.preventDefault();
+            var check = confirm('Are you sure to delete this..');
+            if(check)
+            {
+                document.getElementById('deleteProductForm'+id).submit();
+            }
+        }
+    </script>
 @endsection

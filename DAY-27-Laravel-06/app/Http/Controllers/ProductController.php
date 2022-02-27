@@ -24,7 +24,6 @@ class ProductController extends Controller
         $this->product->price  = $request->price;
         $this->product->description = $request->description;
         $image = $request->file('image');
-        $imageName = 
         $this->product->save();
 
 //        return "success"; one time session 'message' which will destroy afterwards
@@ -38,7 +37,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         $this->product = Product::find($id);
-        return view('edit-product',['student' => $this->product]);
+        return view('product.edit-product',['product' => $this->product]);
     }
     public function update(Request $request, $id)
     {
@@ -51,14 +50,14 @@ class ProductController extends Controller
         $this->product->image = $request->image;
         $this->product->save();
 
-        return redirect('/manage-student')->with('message', 'Product info update successfully');
+        return redirect('/manage-product')->with('message', 'Product info updated successfully');
 
     }
     public function delete($id)
     {
         $this->product = Product::find($id);
         $this->product->delete();
-        return redirect('/manage-student')->with('message', 'Product info delete successfully');
+        return redirect('/manage-product')->with('message', 'Product info deleted successfully');
     }
 
 }

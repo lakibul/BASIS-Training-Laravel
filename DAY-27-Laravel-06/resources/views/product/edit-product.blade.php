@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-8 mx-auto">
                     <div class="card">
-                        <div class="card-header bg-warning">Edit Product Form</div>
+                        <div class="card-header bg-warning text-center"><h3>Edit Product Form</h3></div>
                         <div class="card-body">
                             <h4 class="text-success text-center">{{ Session::get('message') }}</h4>
                             <form action="{{route('update-product', ['id' => $product->id])}}" method="post">
@@ -40,7 +40,7 @@
                                 <div class="form-group row">
                                     <label class="col-md-3">Product Price</label>
                                     <div class="col-md-9">
-                                        <input type="text" value="{{$product->price}}" name="price" class="form-control"/>
+                                        <input type="number" value="{{$product->price}}" name="price" class="form-control"/>
                                     </div>
                                 </div>
 

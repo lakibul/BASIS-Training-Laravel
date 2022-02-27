@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-8 mx-auto">
                     <div class="card">
-                        <div class="card-header">Add Product Form</div>
+                        <div class="card-header text-center"><h3>Add Product Form</h3></div>
                         <div class="card-body">
                             <h4 class="text-success text-center">{{ Session::get('message') }}</h4>
                             <form action="{{route('new-product')}}" method="post" enctype="multipart/form-data">
@@ -39,7 +39,7 @@
                                 <div class="form-group row">
                                     <label class="col-md-3">Product Price</label>
                                     <div class="col-md-9">
-                                        <input type="text" name="price" class="form-control"/>
+                                        <input type="number" name="price" class="form-control"/>
                                     </div>
                                 </div>
 
