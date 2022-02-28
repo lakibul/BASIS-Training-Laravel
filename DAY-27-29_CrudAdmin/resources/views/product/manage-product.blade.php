@@ -10,13 +10,14 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
-                        <div class="card-header text-center"><h3>All Product</h3></div>
+                        <div class="card-header text-center"><h3>All Product Info:</h3></div>
                         <div class="card-body">
                             <h4 class="text-success text-center">{{Session::get('message')}}</h4>
                             <table class="table table-bordered table-hover">
                                 <thead>
                                 <tr>
                                     <th>SL NO</th>
+                                    <th>Product ID</th>
                                     <th>Product Name</th>
                                     <th>Product Category</th>
                                     <th>Brand Name</th>
@@ -30,12 +31,13 @@
                                 @foreach($products as $product)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
+                                        <td>{{$product->id}}</td>
                                         <td>{{$product->name}}</td>
                                         <td>{{$product->category}}</td>
                                         <td>{{$product->brand}}</td>
                                         <td>{{$product->price}}</td>
                                         <td>{{$product->description}}</td>
-                                        <td>{{$product->image}}</td>
+                                        <td><img src="{{asset($product->image)}}" alt="" height="100" width="120"/></td>
                                         <td>
                                             <a href="{{route('edit-product', ['id' => $product->id])}}" class="btn btn-success btn-sm">
                                                 <i class="fa fa-edit"></i>

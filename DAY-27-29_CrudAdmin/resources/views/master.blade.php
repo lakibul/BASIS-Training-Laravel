@@ -25,9 +25,13 @@
                 </ul>
             </li>
 
-
-            <li><a href="{{route('add-product')}}" class="nav-link">Add Product</a></li>
-            <li><a href="{{route('manage-product')}}" class="nav-link">Manage Product</a></li>
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" a href="#">Product <b class="caret"></b></a>
+                <ul class="dropdown-menu bg-dark">
+                    <li><a href="{{route('add-product')}}" class="nav-link">Add Product</a></li>
+                    <li><a href="{{route('manage-product')}}" class="nav-link">Manage Product</a></li>
+                </ul>
+            </li>
             <li><a href="" class="nav-link">Login</a></li>
         </ul>
     </div>

@@ -10,8 +10,8 @@
             <div class="row">
                 <div class="col-md-8 mx-auto">
                     <div class="card">
-                        <div class="card-header bg-dark text-white">Add Student Form</div>
-                        <div class="card-body bg-dark text-white">
+                        <div class="card-header text-center"><h3>Add Student Form</h3></div>
+                        <div class="card-body">
                             <h4 class="text-success text-center">{{ Session::get('message') }}</h4>
                             <form action="{{route('new-student')}}" method="post">
                                 @csrf
@@ -36,7 +36,7 @@
                                 <div class="form-group row">
                                     <label class="col-form-label col-md-3"></label>
                                     <div class="col-md-9">
-                                        <input type="submit" class="btn btn-outline-light" value="Create New Student"/>
+                                        <input type="submit" class="btn btn-outline-success" value="Create New Student"/>
                                     </div>
                                 </div>
 

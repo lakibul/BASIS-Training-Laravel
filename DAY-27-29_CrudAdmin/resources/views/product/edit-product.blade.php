@@ -47,7 +47,7 @@
                                 <div class="form-group row">
                                     <label class="col-md-3">Product Description</label>
                                     <div class="col-md-9">
-                                        <textarea name="description" class="form-control"></textarea>
+                                        <textarea name="description" class="form-control">{{$product->description}}</textarea>
                                     </div>
                                 </div>
 
@@ -55,6 +55,7 @@
                                     <label class="col-md-3">Product Image</label>
                                     <div class="col-md-9">
                                         <input type="file" name="image" class="form-control-file"/>
+                                        <img src="{{asset($product->image)}}" alt="" height="100" width="150" style="padding-top: 10px"/>
                                     </div>
                                 </div>
 
