@@ -13,7 +13,7 @@
                         <div class="card-header bg-warning text-center"><h3>Edit Product Form</h3></div>
                         <div class="card-body">
                             <h4 class="text-success text-center">{{ Session::get('message') }}</h4>
-                            <form action="{{route('update-product', ['id' => $product->id])}}" method="post">
+                            <form action="{{route('update-product', ['id' => $product->id])}}" method="post" enctype="multipart/form-data">
 
                                 @csrf
                                 <div class="form-group row">

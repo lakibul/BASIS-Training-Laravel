@@ -28,7 +28,7 @@ Route::post('/update-student/{id}', [studentController::class, 'update'])->name(
 Route::post('/delete-student/{id}', [studentController::class, 'delete'])->name('delete-student');
 
 
-Route::get('/add-product', [ProductController::class, 'index'])->name('add-product');
+Route::get('/add-product', [ProductController::class, 'index'])->name('add-product')->middleware('admin');
 Route::get('/manage-product', [ProductController::class, 'manage'])->name('manage-product');
 Route::get('/edit-product/{id}', [ProductController::class, 'edit'])->name('edit-product');
 Route::post('/update-product/{id}', [ProductController::class, 'update'])->name('update-product');
@@ -39,3 +39,7 @@ Route::post('/new-product', [ProductController::class, 'create'])->name('new-pro
 Route::get('/manage-blog/{id}', [BlogController::class, 'edit'])->name('manage-blog');
 Route::get('/manage-blog', [BlogController::class, 'manage'])->name('manage-blog');
 Route::post('/add-blog', [BlogController::class, 'create'])->name('add-blog');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
